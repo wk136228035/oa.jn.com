@@ -11,6 +11,7 @@
 		<module>oa-common</module>
 		<module>oa-sso</module>
 		<module>oa-hrm</module>
+		<module>oa-apply</module>
 	</modules>
 
 	<parent>
