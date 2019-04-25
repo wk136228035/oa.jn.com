@@ -1,16 +1,0 @@
-server:
-  port: 8888    
-spring:     #定义springmvc视图解析器
-  mvc:    view:      prefix: /WEB-INF/views/
-      suffix: .jsp
-#
-dubbo:
-  scan:
-    basePackages: com.jn       #包扫描
-  application:
-    name: consumer-user        #服务名称
-  registry:
-    address: zookeeper://176.211.22.64:2181?backup=176.211.22.64:2182,176.211.22.64:2183
-
-
-      
