@@ -1,0 +1,28 @@
+package oa.jn.controller;
+
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.alibaba.dubbo.config.annotation.Reference;
+
+import oa.jn.pojo.Record;
+import oa.jn.service.DubboHrMService;
+
+@RequestMapping("/hrm")
+@Controller
+public class HrMController {
+	
+	@Reference(timeout=3000,check=false)
+	private DubboHrMService hrMService;
+	
+	@RequestMapping("/record_manage")
+	public String recordManage(Model model) {
+		List<Record> recordList = hrMService.findAllRecord();
+		model.addAttribute("recordList", recordList);
+		return "record_manage";
+	}
+}
